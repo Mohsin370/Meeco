@@ -1,0 +1,35 @@
+.main{
+    background-color: #e7e5e5;
+    height: 100vh;
+}
+.tenantListing{
+    background-color: white;
+    margin-top: 30px;
+    min-height: 60vh;
+    border-radius: 5px;
+}
+.searchField{
+    border-radius: 5px;
+    outline: none;
+    padding: 2px;
+    border:0.5px solid rgb(200, 200, 200);
+}
+
+.primaryBtn{
+    background-color: #3fb5d3;
+    border-color: #308fa7;
+}
+.primaryBtn:hover{
+    background-color: #3fb5d3;
+    border-color: #308fa7;
+}
+.listingHeading{
+    margin-top: 20px;
+    background-color: rgb(235, 235, 235);
+    padding: 5px 0px 5px 10px;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}
+.tenantItem{
+    padding: 10px;
+    border-bottom: 1px solid rgb(194, 194, 194);
+}

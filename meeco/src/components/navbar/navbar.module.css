@@ -1,0 +1,23 @@
+.navbarMain{
+    background-color: #3fb5d3;
+    color: white;
+    padding: 10px 0px 10px 0px;
+}
+.profileLogo{
+    width: 40px;
+    height: 40px;
+    border-radius: 99px;
+    background-color: white;
+    color: #3fb5d3;
+    text-align: center;
+    padding-top: 8px;
+    font-weight: bold;
+}
+
+.tenantTag{
+    background-color: #23a7c8;
+    outline: none !important;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
