@@ -17,11 +17,10 @@ function CreateTenant(props: any) {
   const initialValues: FormValues = { tenant: "" };
   const createTenant = (values: FormValues) => {
     if (!isSubmit) {
-      console.log(props);
       props.createTenant({
         tenant: values.tenant,
       });
-      navigate('/')
+      navigate("/");
     }
   };
   const formValidation = (values: any) => {
@@ -86,7 +85,7 @@ function CreateTenant(props: any) {
 }
 
 const mapStateToProps = (state: any) => {
-  return state
+  return state;
 };
 
 export default connect(mapStateToProps, TenantsActions)(CreateTenant);

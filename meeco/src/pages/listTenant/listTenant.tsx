@@ -7,7 +7,6 @@ import { TenantsActions } from "../../redux/actions/tenantsActions";
 import { connect } from "react-redux";
 
 function ListTenant(props: any) {
-  console.log(props?.tenantsReducer?.tenantList);
   return (
     <div className={style.main}>
       <Navbar />
@@ -31,12 +30,15 @@ function ListTenant(props: any) {
               <Col xs="12" className={style.listingHeading}>
                 <span>Tenant</span>
               </Col>
-              {props?.tenantsReducer?.tenantList.map((tenant:any) => {
-                return(
-                <Col xs="12" className={style.tenantItem}>
-                  <span>{tenant}</span>
-                </Col>);
-              })}
+              {props?.tenantsReducer?.tenantList.map(
+                (tenant: any, id: number) => {
+                  return (
+                    <Col key={id} xs="12" className={style.tenantItem}>
+                      <span>{tenant}</span>
+                    </Col>
+                  );
+                }
+              )}
             </Row>
           </Row>
         </Col>
