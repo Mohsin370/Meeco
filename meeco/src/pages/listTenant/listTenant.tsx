@@ -3,8 +3,11 @@ import React from "react";
 import style from "./listTenant.module.css";
 import { Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { TenantsActions } from "../../redux/actions/tenantsActions";
+import { connect } from "react-redux";
 
-export default function ListTenant() {
+function ListTenant(props: any) {
+  console.log(props?.tenantsReducer?.tenantList);
   return (
     <div className={style.main}>
       <Navbar />
@@ -17,7 +20,7 @@ export default function ListTenant() {
             <Col xs="10">
               <input className={style.searchField} placeholder="Search" />
             </Col>
-            <Col style={{textAlign:'right'}}>
+            <Col style={{ textAlign: "right" }}>
               <Link to="/create">
                 <Button variant="primary" className={style.primaryBtn}>
                   Create Tanent
@@ -25,8 +28,15 @@ export default function ListTenant() {
               </Link>
             </Col>
             <Row className="m-auto">
-              <Col xs="12" className={style.listingHeading}><span>Tenant</span></Col>
-              <Col xs="12" className={style.tenantItem}><span>Vela Solutions</span></Col>
+              <Col xs="12" className={style.listingHeading}>
+                <span>Tenant</span>
+              </Col>
+              {props?.tenantsReducer?.tenantList.map((tenant:any) => {
+                return(
+                <Col xs="12" className={style.tenantItem}>
+                  <span>{tenant}</span>
+                </Col>);
+              })}
             </Row>
           </Row>
         </Col>
@@ -34,3 +44,8 @@ export default function ListTenant() {
     </div>
   );
 }
+
+const mapStateToProps = (state: any) => {
+  return state;
+};
+export default connect(mapStateToProps, TenantsActions)(ListTenant);
